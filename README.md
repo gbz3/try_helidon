@@ -41,3 +41,15 @@ Java version: 24.0.1, vendor: GraalVM Community, runtime: ~/.sdkman/candidates/j
 Default locale: en, platform encoding: UTF-8
 OS name: "linux", version: "6.6.87.1-microsoft-standard-wsl2", arch: "aarch64", family: "unix"
 ```
+
+### Docker をインストール
+
+```
+$ curl -fsSL https://get.docker.com -o get-docker.sh
+$ sudo sh get-docker.sh
+$ sudo docker run hello-world
+...
+Hello from Docker!
+...
+$
+```
