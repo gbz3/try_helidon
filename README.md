@@ -5,6 +5,7 @@
 ### SDKMAN! をインストール
 
 ```
+$ sudo apt update
 $ sudo apt install zip unzip
 $ curl -s "https://get.sdkman.io" | bash
 $ . ~/.sdkman/bin/sdkman-init.sh
@@ -51,5 +52,33 @@ $ sudo docker run hello-world
 ...
 Hello from Docker!
 ...
+$
+```
+
+### Homebrew で Helidon-CLI をインストール
+
+```
+$ sudo apt install build-essential procps curl file git -y
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+$ echo >> ~/.bashrc
+$ echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
+$ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+$ type brew
+brew is /home/linuxbrew/.linuxbrew/bin/brew
+$ brew --version
+Homebrew 4.5.7
+$ brew install helidon
+$ helidon version
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::loadLibrary has been called by org.fusesource.hawtjni.runtime.Library in an unnamed module (file:/home/linuxbrew/.linuxbrew/Cellar/helidon/3.0.6_1/libexec/libs/jansi-1.18.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+Looking up default Helidon version
+build.date               2025-03-21 22:24:21 GMT
+build.version            3.0.6
+build.revision           ${buildNumber}
+latest.helidon.version   4.2.3
+default.helidon.version  4.2.3
 $
 ```
