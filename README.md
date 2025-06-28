@@ -1,5 +1,8 @@
 # try_helidon
 
+- [MicroProfileのススメ～ なぜぼくはコレを使うのか～](https://speakerdeck.com/ogiwarat/microprofilenosusume-nazebokuhakorewoshi-unoka)
+- [Twelve-Factor Appを噛み砕いてみた](https://qiita.com/supreme0110/items/17c58c660137e23ef713)
+
 ## 環境構築
 
 ### SDKMAN! をインストール
