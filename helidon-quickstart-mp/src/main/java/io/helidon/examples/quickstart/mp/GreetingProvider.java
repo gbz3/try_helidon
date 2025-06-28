@@ -6,7 +6,9 @@ import java.util.concurrent.atomic.AtomicReference;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
-import org.eclipse.microprofile.config.inject.ConfigProperty;
+//import org.eclipse.microprofile.config.inject.ConfigProperty;
+
+import io.helidon.config.Config;
 
 /**
  * Provider for greeting message.
@@ -20,8 +22,10 @@ public class GreetingProvider {
      *
      * @param message greeting to use
      */
+//    public GreetingProvider(@ConfigProperty(name = "app.greeting") String message) {
     @Inject
-    public GreetingProvider(@ConfigProperty(name = "app.greeting") String message) {
+    public GreetingProvider(Config config) {
+        var message = config.get("app.greeting.xxx").asString().orElse("Hello from MP Config");
         this.message.set(message);
     }
 
