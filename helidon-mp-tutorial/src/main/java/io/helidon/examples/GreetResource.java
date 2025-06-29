@@ -2,6 +2,8 @@ package io.helidon.examples;
 
 import java.util.Map;
 
+import org.eclipse.microprofile.metrics.annotation.Timed;
+
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.json.Json;
@@ -30,6 +32,7 @@ public class GreetResource {
 
     @GET
     @Produces(value = MediaType.APPLICATION_JSON)
+    @Timed
     public JsonObject getDefaultMessage() { 
         return createResponse("World");
     }
