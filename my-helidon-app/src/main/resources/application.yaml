@@ -1,0 +1,30 @@
+server:
+  port: 8080
+  host: 0.0.0.0
+
+db:
+  my-persistence-unit:
+    hibernate.connection.url: "jdbc:postgresql://localhost:5432/mydatabase"
+    hibernate.connection.username: "myuser"
+    hibernate.connection.password: "mypassword"
+    hibernate.connection.driver_class: "org.postgresql.Driver"
+    hibernate.dialect: "org.hibernate.dialect.PostgreSQLDialect"
+    hibernate.hbm2ddl.auto: "update"
+    hibernate.show_sql: "true"
+    hibernate.format_sql: "true"
+
+# JPA Configuration for Helidon
+# Helidon の JPA 統合は、persistence.xml の設定を application.yaml で上書きできます
+# properties キーの下に persistence.xml の <property> と同じキー名で記述します
+jakarta.persistence:
+  persistence-unit:
+    my-persistence-unit:
+      properties:
+        jakarta.persistence.jdbc.url: "${db.my-persistence-unit.hibernate.connection.url}"
+        jakarta.persistence.jdbc.user: "${db.my-persistence-unit.hibernate.connection.username}"
+        jakarta.persistence.jdbc.password: "${db.my-persistence-unit.hibernate.connection.password}"
+        jakarta.persistence.jdbc.driver: "${db.my-persistence-unit.hibernate.connection.driver_class}"
+        hibernate.dialect: "${db.my-persistence-unit.hibernate.dialect}"
+        hibernate.hbm2ddl.auto: "${db.my-persistence-unit.hibernate.hbm2ddl.auto}"
+        hibernate.show_sql: "${db.my-persistence-unit.hibernate.show_sql}"
+        hibernate.format_sql: "${db.my-persistence-unit.hibernate.format_sql}"
